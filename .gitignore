@@ -2,3 +2,4 @@
 *.s
 *.o
 hello.txt
+firmware.elf

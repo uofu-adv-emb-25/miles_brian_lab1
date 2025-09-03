@@ -4,10 +4,19 @@ CPP=/usr/bin/arm-none-eabi-cpp
 hello.txt:
 	echo "hello world!" > hello.txt
 
-main.i: main.c
-	$(CPP) main.c > main.i
+%.i: %.c
+	$(CPP) $< > $@
 
 clean:
 	rm -f main.i hello.txt
 
 .PHONY: clean
+
+CC=/usr/bin/arm-none-eabi-gcc
+AS=/usr/bin/arm-none-eabi-as
+
+%.s: %.i
+	$(CC) -S $<
+
+%.o: %.s
+	$(AS) $< -o $@

@@ -10,7 +10,7 @@ hello.txt:
 	$(CPP) $< > $@
 
 clean:
-	rm -f main.i hello.txt
+	rm -f hello.txt *.o
 
 .PHONY: clean all
 

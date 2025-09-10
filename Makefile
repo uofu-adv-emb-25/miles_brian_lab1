@@ -15,7 +15,7 @@ hello.txt:
 	$(CPP) $< > $@
 
 clean:
-	rm -f hello.txt *.o
+	rm -f *.i *.s *.o hello.txt firmware.elf
 
 .PHONY: clean all
 
